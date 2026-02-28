@@ -13,7 +13,7 @@ int main(int argc, char *argv[]){
         return 1;
     }
 
-    int capacity = 5;
+    int capacity = 4;
     char *dict = malloc(capacity * sizeof(char));
     int dictSize = 0;
     
@@ -22,21 +22,24 @@ int main(int argc, char *argv[]){
         if (code == 0){
             int ascii;
             if (fscanf(filep, "%d", &ascii)!= 1) break;
+
             if (dictSize == capacity){
                 capacity *= 2;
                 dict = realloc(dict, capacity * sizeof(char));
             }
+
             dictSize++;
             dict[dictSize] = (char)ascii;
-
             putchar(dict[dictSize]);
-            } else {
-                if(code >= 1 && code <= dictSize){
-                    putchar(dict[code]);
-                }
+
+        } else {
+            if(code >= 1 && code <= dictSize){
+                putchar(dict[code]);
+            }
         }
     }
+
     fclose(filep);
     free(dict);
-    return 0;+
+    return 0;
 }
