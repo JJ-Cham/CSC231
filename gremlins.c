@@ -20,10 +20,10 @@ int main( int argc, char *argv[] ) {
     //open file 
     filep = fopen(fileName, "r");
     //just in case 
-    // if ( filep == NULL ) {
-    //     printf("Error opening file %s\n", fileName);
-    //     return 1;
-    // }
+    if ( filep == NULL ) {
+        printf("Error opening file %s\n", fileName);
+        return 1;
+    }
 
     //read file letter by letter to change each g to gremlin 
     while ( (c = fgetc(filep)) != EOF ) {
