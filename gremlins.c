@@ -30,7 +30,7 @@ int main( int argc, char *argv[] ) {
         if ( c == 'g' ) {
             printf("gremlin");
         }else if ( c == 'G' ) {
-            printf("Gremlin");
+            printf("GREMLIN");
         } else {
             putchar(c);
         }
