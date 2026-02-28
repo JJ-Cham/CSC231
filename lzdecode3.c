@@ -27,7 +27,7 @@ int main(int argc, char *argv[]){
                 dict = realloc(dict, capacity * sizeof(char));
             }
             dictSize++;
-            dict[dictSize]=char(ascii);
+            dict[dictSize] = (char)ascii;
 
             putchar(dict[dictSize]);
             } else {
