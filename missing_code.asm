@@ -5,9 +5,9 @@
 ;;; ;
 ;;; ; to assemble and run:
 ;;; ;
-;;; ;   nasm-f elf missing_code.asm
-;;; ;   ld-melf_i386-o missing_code missing_code.o
-;;; ;   ./missing_code
+;;; ;     nasm-f elf missing_code.asm
+;;; ;     ld-melf_i386-o missing_code missing_code.o
+;;; ;     ./missing_code
 ;;; ;-------------------------------------------------------------------
 
 
