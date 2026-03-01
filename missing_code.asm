@@ -36,87 +36,94 @@ _start:
 
 ;;; add your code here!
 
-    ; top border: + ------------------- +
+    ; write "+"
     mov eax,4
     mov ebx,1
     mov ecx,plus
-    mov edx,2
+    mov edx,1
     int 0x80
 
+    ; write 19 dashes 
     mov eax,4
     mov ebx,1
-    mov ecx,dashes
+    mov ecx,message+6
     mov edx,19
     int 0x80
 
+    ; write "+"
     mov eax,4
     mov ebx,1
     mov ecx,plus
-    mov edx,2
+    mov edx,1
     int 0x80
 
     ; newline
     mov eax,4
     mov ebx,1
-    mov ecx,lf
+    mov ecx,msg4
     mov edx,1
     int 0x80
 
-    ; middle line: | Assembly Language |
-    mov eax,4
-    mov ebx,1
-    mov ecx,bar
-    mov edx,1
-    int 0x80
-
-    mov eax,4
-    mov ebx,1
-    mov ecx,msg1
-    mov edx,8
-    int 0x80
-
+    ; write "|"
     mov eax,4
     mov ebx,1
     mov ecx,msg3
+    mov edx,1
+    int 0x80
+
+    ; write " Assembly"
+    mov eax,4
+    mov ebx,1
+    mov ecx,msg1+4
     mov edx,9
     int 0x80
 
+    ; write " Language"
     mov eax,4
     mov ebx,1
-    mov ecx,bar
+    mov ecx,msg4+1
+    mov edx,9
+    int 0x80
+
+    ; write "|"
+    mov eax,4
+    mov ebx,1
+    mov ecx,msg3
     mov edx,1
     int 0x80
 
     ; newline
     mov eax,4
     mov ebx,1
-    mov ecx,lf
+    mov ecx,msg4
     mov edx,1
     int 0x80
 
-    ; bottom border (same as top)
+    ; write "+"
     mov eax,4
     mov ebx,1
     mov ecx,plus
-    mov edx,2
+    mov edx,1
     int 0x80
 
+    ; write 19 dashes
     mov eax,4
     mov ebx,1
-    mov ecx,dashes
+    mov ecx,message+6
     mov edx,19
     int 0x80
 
+    ; write "+"
     mov eax,4
     mov ebx,1
     mov ecx,plus
-    mov edx,2
+    mov edx,1
     int 0x80
 
     ; newline
     mov eax,4
     mov ebx,1
-    mov ecx,lf
+    mov ecx,msg4
     mov edx,1
     int 0x80
 
