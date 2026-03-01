@@ -37,77 +37,120 @@ _start:
 ;;; add your code here!
 ;;; ---- DO NOT EDIT ABOVE THIS LINE
 
-    ; print top border (first 25 chars of message)
-    mov     eax, 4          ; sys_write
-    mov     ebx, 1          ; stdout
-    mov     ecx, message    ; "+-------------------+"
-    mov     edx, 25
+
+    ; ---------------------------------------
+    ; print top border: +-------------------+
+    ; ---------------------------------------
+
+    ; print "+"
+    mov     eax, 4
+    mov     ebx, 1
+    mov     ecx, plus        ; plus = "+ | "
+    mov     edx, 1           ; only '+'
     int     0x80
 
-    ; print newline
+    ; print 19 dashes from message+6
+    mov     eax, 4
+    mov     ebx, 1
+    mov     ecx, message+6   ; skip "******"
+    mov     edx, 19
+    int     0x80
+
+    ; print "+"
+    mov     eax, 4
+    mov     ebx, 1
+    mov     ecx, plus        ; '+'
+    mov     edx, 1
+    int     0x80
+
+    ; newline
     mov     eax, 4
     mov     ebx, 1
     mov     ecx, lf
     mov     edx, 1
     int     0x80
 
-    ; print "|"
+
+    ; ---------------------------------------
+    ; print middle line: | Assembly Language |
+    ; ---------------------------------------
+
+    ; "|"
     mov     eax, 4
     mov     ebx, 1
     mov     ecx, msg4
     mov     edx, 1
     int     0x80
 
-    ; print space (from plus+1 → " ")
+    ; space (from plus+1)
     mov     eax, 4
     mov     ebx, 1
     mov     ecx, plus+1
     mov     edx, 1
     int     0x80
 
-    ; print "Assembly"
+    ; "Assembly"
     mov     eax, 4
     mov     ebx, 1
     mov     ecx, msg1
     mov     edx, 8
     int     0x80
 
-    ; print " Language"
+    ; " Language"
     mov     eax, 4
     mov     ebx, 1
     mov     ecx, msg3
     mov     edx, 9
     int     0x80
 
-    ; print space
+    ; space
     mov     eax, 4
     mov     ebx, 1
     mov     ecx, plus+1
     mov     edx, 1
     int     0x80
 
-    ; print "|"
+    ; "|"
     mov     eax, 4
     mov     ebx, 1
     mov     ecx, msg4
     mov     edx, 1
     int     0x80
 
-    ; print newline
+    ; newline
     mov     eax, 4
     mov     ebx, 1
     mov     ecx, lf
     mov     edx, 1
     int     0x80
 
-    ; print bottom border (same 25 chars)
+
+    ; ---------------------------------------
+    ; bottom border (same as top)
+    ; ---------------------------------------
+
+    ; "+"
     mov     eax, 4
     mov     ebx, 1
-    mov     ecx, message
-    mov     edx, 25
+    mov     ecx, plus
+    mov     edx, 1
     int     0x80
 
-    ; print newline
+    ; 19 dashes
+    mov     eax, 4
+    mov     ebx, 1
+    mov     ecx, message+6
+    mov     edx, 19
+    int     0x80
+
+    ; "+"
+    mov     eax, 4
+    mov     ebx, 1
+    mov     ecx, plus
+    mov     edx, 1
+    int     0x80
+
+    ; newline
     mov     eax, 4
     mov     ebx, 1
     mov     ecx, lf
