@@ -36,6 +36,91 @@ _start:
 
 ;;; add your code here!
 
+        ; write "+"
+        mov eax,4
+        mov ebx,1
+        mov ecx,plus
+        mov edx,1
+        int 0x80
+
+        ; write "-------------------"
+        mov eax,4
+        mov ebx,1
+        mov ecx,message+13
+        mov edx,19
+        int 0x80
+
+        ; write "+"
+        mov eax,4
+        mov ebx,1
+        mov ecx,plus
+        mov edx,1
+        int 0x80
+
+        ; newline
+        mov eax,4
+        mov ebx,1
+        mov ecx,msg4
+        mov edx,1
+        int 0x80
+
+        ; write "| Assembly Language |"
+        mov eax,4
+        mov ebx,1
+        mov ecx,msg1
+        mov edx,3
+        int 0x80
+
+        mov eax,4
+        mov ebx,1
+        mov ecx,msg1+3
+        mov edx,8
+        int 0x80
+
+        mov eax,4
+        mov ebx,1
+        mov ecx,msg3
+        mov edx,9
+        int 0x80
+
+        mov eax,4
+        mov ebx,1
+        mov ecx,msg4+1
+        mov edx,1
+        int 0x80
+
+        ; newline
+        mov eax,4
+        mov ebx,1
+        mov ecx,msg4
+        mov edx,1
+        int 0x80
+
+        ; bottom line (same as top)
+        mov eax,4
+        mov ebx,1
+        mov ecx,plus
+        mov edx,1
+        int 0x80
+
+        mov eax,4
+        mov ebx,1
+        mov ecx,message+13
+        mov edx,19
+        int 0x80
+
+        mov eax,4
+        mov ebx,1
+        mov ecx,plus
+        mov edx,1
+        int 0x80
+
+        ; newline
+        mov eax,4
+        mov ebx,1
+        mov ecx,msg4
+        mov edx,1
+        int 0x80
 
 ;;;---- DO NOT EDIT BELOW THIS LINE
 ;;; exit()
