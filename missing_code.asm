@@ -28,7 +28,7 @@ msg4    db "|"
 ;;; code area
 ;;; -----------------------------------------------------------
 
-    section.text
+    section .text
     global _start
 _start:
 ;;; ---- DO NOT EDIT ABOVE THIS LINE
