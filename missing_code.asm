@@ -24,14 +24,14 @@ msg2    db "CSC231a"
 lf      db 10
 msg3    db " Language"
 msg4    db "|"
-;;;-----------------------------------------------------------
+;;; -----------------------------------------------------------
 ;;; code area
-;;;-----------------------------------------------------------
+;;; -----------------------------------------------------------
 
     section.text
     global _start
 _start:
-;;;---- DO NOT EDIT ABOVE THIS LINE
+;;; ---- DO NOT EDIT ABOVE THIS LINE
 
 
 ;;; add your code here!
@@ -122,7 +122,7 @@ _start:
         mov edx,1
         int 0x80
 
-;;;---- DO NOT EDIT BELOW THIS LINE
+;;; ---- DO NOT EDIT BELOW THIS LINE
 ;;; exit()
     mov     eax,1
     mov     ebx,0
