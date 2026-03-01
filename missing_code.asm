@@ -126,4 +126,4 @@ _start:
 ;;;  exit()
     mov    eax,1
     mov    ebx,0
-    mov    0x80      ; final system call
+    int    0x80      ; final system call
