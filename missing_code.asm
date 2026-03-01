@@ -123,7 +123,7 @@ _start:
         int 0x80
 
 ;;; ---- DO NOT EDIT BELOW THIS LINE
-;;; exit()
-    mov     eax,1
-    mov     ebx,0
-    int     0x80        ; final system call
+;;;  exit()
+    mov    eax,1
+    mov    ebx,0
+    mov    0x80      ; final system call
