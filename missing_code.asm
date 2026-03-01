@@ -35,101 +35,84 @@ _start:
 
 
 ;;; add your code here!
+;;; ---- DO NOT EDIT ABOVE THIS LINE
 
-    ; write "+"
-    mov eax,4
-    mov ebx,1
-    mov ecx,msg1        ; "+ | Assembly"
-    mov edx,1
-    int 0x80
+    ; print top border (first 25 chars of message)
+    mov     eax, 4          ; sys_write
+    mov     ebx, 1          ; stdout
+    mov     ecx, message    ; "+-------------------+"
+    mov     edx, 25
+    int     0x80
 
-    ; write 19 dashes (skip "hello there",10,10 and "******")
-    mov eax,4
-    mov ebx,1
-    mov ecx,message+14  ; skip "hello there" (11) + 2 LF + 6 stars
-    mov edx,19
-    int 0x80
+    ; print newline
+    mov     eax, 4
+    mov     ebx, 1
+    mov     ecx, lf
+    mov     edx, 1
+    int     0x80
 
-    ; write "+"
-    mov eax,4
-    mov ebx,1
-    mov ecx,msg1
-    mov edx,1
-    int 0x80
+    ; print "|"
+    mov     eax, 4
+    mov     ebx, 1
+    mov     ecx, msg4
+    mov     edx, 1
+    int     0x80
 
-    ; newline
-    mov eax,4
-    mov ebx,1
-    mov ecx,msg4        ; newline byte
-    mov edx,1
-    int 0x80
+    ; print space (from plus+1 → " ")
+    mov     eax, 4
+    mov     ebx, 1
+    mov     ecx, plus+1
+    mov     edx, 1
+    int     0x80
 
-    ; write "|"
-    mov eax,4
-    mov ebx,1
-    mov ecx,msg4+10     ; "|" is after newline + " Language"
-    mov edx,1
-    int 0x80
+    ; print "Assembly"
+    mov     eax, 4
+    mov     ebx, 1
+    mov     ecx, msg1
+    mov     edx, 8
+    int     0x80
 
-    ; write " Assembly"
-    mov eax,4
-    mov ebx,1
-    mov ecx,msg1+4      ; skip "+ | "
-    mov edx,9
-    int 0x80
+    ; print " Language"
+    mov     eax, 4
+    mov     ebx, 1
+    mov     ecx, msg3
+    mov     edx, 9
+    int     0x80
 
-    ; write " Language"
-    mov eax,4
-    mov ebx,1
-    mov ecx,msg4+1      ; skip newline
-    mov edx,9
-    int 0x80
+    ; print space
+    mov     eax, 4
+    mov     ebx, 1
+    mov     ecx, plus+1
+    mov     edx, 1
+    int     0x80
 
-    ; write space before closing |
-    mov eax,4
-    mov ebx,1
-    mov ecx,msg1+1      ; space from "+ | "
-    mov edx,1
-    int 0x80
+    ; print "|"
+    mov     eax, 4
+    mov     ebx, 1
+    mov     ecx, msg4
+    mov     edx, 1
+    int     0x80
 
-    ; write "|"
-    mov eax,4
-    mov ebx,1
-    mov ecx,msg4+10
-    mov edx,1
-    int 0x80
+    ; print newline
+    mov     eax, 4
+    mov     ebx, 1
+    mov     ecx, lf
+    mov     edx, 1
+    int     0x80
 
-    ; newline
-    mov eax,4
-    mov ebx,1
-    mov ecx,msg4
-    mov edx,1
-    int 0x80
+    ; print bottom border (same 25 chars)
+    mov     eax, 4
+    mov     ebx, 1
+    mov     ecx, message
+    mov     edx, 25
+    int     0x80
 
-    ; bottom line: "+-------------------+"
-    mov eax,4
-    mov ebx,1
-    mov ecx,msg1
-    mov edx,1
-    int 0x80
-
-    mov eax,4
-    mov ebx,1
-    mov ecx,message+14
-    mov edx,19
-    int 0x80
-
-    mov eax,4
-    mov ebx,1
-    mov ecx,msg1
-    mov edx,1
-    int 0x80
-
-    mov eax,4
-    mov ebx,1
-    mov ecx,msg4
-    mov edx,1
-    int 0x80
+    ; print newline
+    mov     eax, 4
+    mov     ebx, 1
+    mov     ecx, lf
+    mov     edx, 1
+    int     0x80
 
 ;;; ---- DO NOT EDIT BELOW THIS LINE
 ;;;  exit()
