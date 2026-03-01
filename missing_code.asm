@@ -39,56 +39,63 @@ _start:
     ; write "+"
     mov eax,4
     mov ebx,1
-    mov ecx,plus
+    mov ecx,msg1        ; "+ | Assembly"
     mov edx,1
     int 0x80
 
-    ; write 19 dashes 
+    ; write 19 dashes (skip "hello there",10,10 and "******")
     mov eax,4
     mov ebx,1
-    mov ecx,message+6
+    mov ecx,message+14  ; skip "hello there" (11) + 2 LF + 6 stars
     mov edx,19
     int 0x80
 
     ; write "+"
     mov eax,4
     mov ebx,1
-    mov ecx,plus
+    mov ecx,msg1
     mov edx,1
     int 0x80
 
     ; newline
     mov eax,4
     mov ebx,1
-    mov ecx,msg4
+    mov ecx,msg4        ; newline byte
     mov edx,1
     int 0x80
 
     ; write "|"
     mov eax,4
     mov ebx,1
-    mov ecx,msg3
+    mov ecx,msg4+10     ; "|" is after newline + " Language"
     mov edx,1
     int 0x80
 
     ; write " Assembly"
     mov eax,4
     mov ebx,1
-    mov ecx,msg1+4
+    mov ecx,msg1+4      ; skip "+ | "
     mov edx,9
     int 0x80
 
     ; write " Language"
     mov eax,4
     mov ebx,1
-    mov ecx,msg4+1
+    mov ecx,msg4+1      ; skip newline
     mov edx,9
+    int 0x80
+
+    ; write space before closing |
+    mov eax,4
+    mov ebx,1
+    mov ecx,msg1+1      ; space from "+ | "
+    mov edx,1
     int 0x80
 
     ; write "|"
     mov eax,4
     mov ebx,1
-    mov ecx,msg3
+    mov ecx,msg4+10
     mov edx,1
     int 0x80
 
@@ -99,28 +106,25 @@ _start:
     mov edx,1
     int 0x80
 
-    ; write "+"
+    ; bottom line: "+-------------------+"
     mov eax,4
     mov ebx,1
-    mov ecx,plus
+    mov ecx,msg1
     mov edx,1
     int 0x80
 
-    ; write 19 dashes
     mov eax,4
     mov ebx,1
-    mov ecx,message+6
+    mov ecx,message+14
     mov edx,19
     int 0x80
 
-    ; write "+"
     mov eax,4
     mov ebx,1
-    mov ecx,plus
+    mov ecx,msg1
     mov edx,1
     int 0x80
 
-    ; newline
     mov eax,4
     mov ebx,1
     mov ecx,msg4
