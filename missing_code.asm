@@ -52,7 +52,7 @@ _start:
     ; print 19 dashes from message+6
     mov     eax, 4
     mov     ebx, 1
-    mov     ecx, message+6   ; skip "******"
+    mov     ecx, message+19   ; skip "******"
     mov     edx, 19
     int     0x80
 
@@ -139,7 +139,7 @@ _start:
     ; 19 dashes
     mov     eax, 4
     mov     ebx, 1
-    mov     ecx, message+6
+    mov     ecx, message+19
     mov     edx, 19
     int     0x80
 
